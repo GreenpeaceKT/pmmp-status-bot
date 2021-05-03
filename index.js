@@ -6,7 +6,7 @@ var fetch = require('node-fetch');
 
 client.on('ready', () => { 
   console.log(`${client.user.tag}が起動しました`);
-　　})
+　　})//起動したらconsoleにメッセージを送信します
 
 
 client.on('message', async message =>{
@@ -19,14 +19,14 @@ client.on('message', async message =>{
     
 
 
-if(command === "status"){
+if(command === "status"){//もしコマンドが入力されたら
         let url = "https://api.mcsrvstat.us/2/yourserverip:yourserverport";//ex)"https://api...../mc.example.com:19132"
         fetch(url)
          .then(function(response) {
         return response.json();
     })
-    .then(function(jsonData) {
-　　　message.channel.send({
+    .then(function(jsonData) {//urlからjsonを取得して
+　　　message.channel.send({//コマンドが入力されたチャンネルに送信します
                     embed: {
                         color: 3447003,
                         author: {
