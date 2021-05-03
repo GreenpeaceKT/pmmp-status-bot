@@ -1,10 +1,12 @@
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const https = require('https');
+var fetch = require('node-fetch');
 
 client.on('ready', () => { 
   console.log(`${client.user.tag}が起動しました`);
-
+　　})
 
 
 client.on('message', async message =>{
